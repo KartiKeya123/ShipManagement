@@ -1,4 +1,22 @@
+const sendHttpRequest = async(method, url, data) => {
+    return await fetch(url, {
+        method: method,
+        headers: data ? { 'Content-Type': 'application/json' } :{},
+        body: JSON.stringify(data)
+    }).then(response => {
+        if(response.statusText >= 400) {
+            return response.json().then(errResdata => {
+                const error = new error('Something went wrong!!!');
+                error.data = errResdata;
+                throw error;
+            });
+        }
+        return response.text();
+    });
+};
+
 const signup = document.querySelector('#signup');
+const login = document.querySelector('#login');
 
 const addUser = () => {
     let email = document.getElementById("email").value;
@@ -17,14 +35,12 @@ const addUser = () => {
         username: username
     }).then(response => {
         alert(response);
+    }).catch(err => {
+        alert(err);
     });
 
     document.getElementById('signup-form').reset();
 };
-
-signup.addEventListener('click', addUser);
-
-const login = document.querySelector('#login');
 
 const loginUser = () => {
     let loginPassword = document.getElementById("login-password").value;
@@ -35,17 +51,10 @@ const loginUser = () => {
         username: loginUsername
     }).then(response => {
         alert(response);
+    }).catch(err => {
+        alert(err);
     });
 };
 
+signup.addEventListener('click', addUser);
 login.addEventListener('click', loginUser);
-
-const sendHttpRequest = async(method, url, data) => {
-    return await fetch(url, {
-        method: method,
-        headers: data ? { 'Content-Type': 'application/json' } :{},
-        body: JSON.stringify(data)
-    }).then(response => {
-        return response.text();
-    });
-};
