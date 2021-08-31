@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Ship Management System</title>
+        <link rel="stylesheet" href="./css/style-login.css" type="text/css">
+    </head>
+    <body>
+        <header>
+            <div id="header-container">
+                <div class="col-3"><a href="index.html"><h1>Ship Management System</h1></a></div>
+                <div class="col-3"> </div>
+                <div class="col-3">
+                    <nav>
+                        <ul class="menu">
+                            <li>Home</li>
+                            <li>About</li>
+                            <li>Contact US</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header><!--Header container ends here-->
+        <div class="signup">
+            <div class="col-2">
+                <form class="signupform" id="signup-form" method="POST"> <!-- onsubmit="addUser()" action="/adduser" -->
+                    <h6>REGISTRATION</h6>
+                    <input type="text" id="username" placeholder="User Name" required/>
+                    <br>
+                    <input type="password" id="password" placeholder="Password" required/>
+                    <br>
+                    <input type="text" id="firstname" placeholder="First Name" required/>
+                    <br>
+                    <input type="text" id="lastname" placeholder="LastName" required/>
+                    <br>
+                    <input type="email" id="email" placeholder="Email" required/>
+                    <br>
+                    <input type="number" id="mobil" placeholder="Mobile No" required/>
+                    <br>
+                    <p style:"font-size:11px;">* We don't share your personal info with anyone. check out our
+                        <a href="#">Privacy policy</a> for more information.
+                    </p>
+                </form>
+                <button style:"trial" type="submit" value="submit" id="signup">SIGN UP</button>
+                <H5 id="result"></H5>
+            </div>
+            <div class="col-2">
+                <div class="top-margin">
+                    <form class="signupform"> <!--  action="" method="post" -->
+                        <h6>LOGIN</h6>
+                        <input type="text" id="login-username" placeholder="Username" required/><br>
+                        <input type="password" id="login-password" placeholder="Password" required/><br>
+                    </form>
+                    <button style:"trial" type="submit" value="submit" id="login">LOGIN</button>
+                </div>
+            </div>
+        </div><!--Main container ends here-->
+        <footer>
+            <p style:"text-align:right;">
+                <img class="logo" src="./images/ship-icon-blue-400x400.png" alt="logo" width="100px"
+                     height="100px">
+            </p>
+            <span class="copyright">&copy; Copyright 2021 #Pixels.inc. All Rights Reserved. &hearts;</span>
+            <div class="social-footer">
+                <div class=center>
+                    <img src="./images/twitter-Icon-400x400.png" alt="twitter" height="100" width="100">
+                </div>
+            </div>
+            <div class="social-footer">
+                <div class=center>
+                    <img src="./images/Instagraam-Icon-715x715.png" alt="Instagram" height="110" width="110">
+                </div>
+            </div>
+        </footer>
+        <script src="./js/app.js"></script>
+    </body>
+</html>
