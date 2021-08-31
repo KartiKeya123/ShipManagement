@@ -8,29 +8,16 @@ const addUser = async() => {
     let password = document.getElementById("password").value;
     let username = document.getElementById("username").value;
 
-    let responseData = await fetch('http://localhost:8080/adduser', {
-        method:'POST',
-        headers: {
-            'Accept':'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(
-            {
-                email: email,
-                firstname: firstname,
-                lastname: lastname,
-                mobil: mobil,
-                password: password,
-                username: username
-            })
+    sendHttpRequest('POST', 'http://localhost:8080/adduser',{
+        email: email,
+        firstname: firstname,
+        lastname: lastname,
+        mobil: mobil,
+        password: password,
+        username: username
     }).then(response => {
-        return response.text();
+        alert(response);
     });
-
-    alert(responseData);
-    /*
-         
-    */
 
     document.getElementById('signup-form').reset();
     
@@ -44,19 +31,25 @@ const loginUser = async() => {
     let loginPassword = document.getElementById("login-password").value;
     let loginUsername = document.getElementById("login-username").value;
 
-    let response = await fetch('http://localhost:8080/login',{
-        method:'POST',
-        headers: {
-            'Accept':'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(
-            {
-                password: loginPassword,
-                username: loginUsername
-            })
+    sendHttpRequest('POST', 'http://localhost:8080/login',{
+        password: loginPassword,
+        username: loginUsername
+    }).then(response => {
+        alert(response);
     });
-    console.log(response);
 };
 
 login.addEventListener('click', loginUser);
+
+const sendHttpRequest = (method, url, data) => {
+    return await fetch(url, {
+        method: method,
+        headers: data ? {
+            'Accept':'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }).then(response => {
+        return response.text();
+    });
+};
