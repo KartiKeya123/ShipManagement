@@ -1,6 +1,6 @@
 const signup = document.querySelector('#signup');
 
-const addUser = async() => {
+const addUser = () => {
     let email = document.getElementById("email").value;
     let firstname = document.getElementById("firstname").value;
     let lastname = document.getElementById("lastname").value;
@@ -20,14 +20,13 @@ const addUser = async() => {
     });
 
     document.getElementById('signup-form').reset();
-    
 };
 
 signup.addEventListener('click', addUser);
 
 const login = document.querySelector('#login');
 
-const loginUser = async() => {
+const loginUser = () => {
     let loginPassword = document.getElementById("login-password").value;
     let loginUsername = document.getElementById("login-username").value;
 
@@ -41,13 +40,10 @@ const loginUser = async() => {
 
 login.addEventListener('click', loginUser);
 
-const sendHttpRequest = (method, url, data) => {
+const sendHttpRequest = async(method, url, data) => {
     return await fetch(url, {
         method: method,
-        headers: data ? {
-            'Accept':'application/json',
-            'Content-Type': 'application/json'
-        },
+        headers: data ? { 'Content-Type': 'application/json' } :{},
         body: JSON.stringify(data)
     }).then(response => {
         return response.text();
