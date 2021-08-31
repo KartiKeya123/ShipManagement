@@ -8,9 +8,7 @@ const addUser = async() => {
     let password = document.getElementById("password").value;
     let username = document.getElementById("username").value;
 
-    
-
-    let response = await fetch('http://localhost:8080/adduser', {
+    let responseData = await fetch('http://localhost:8080/adduser', {
         method:'POST',
         headers: {
             'Accept':'application/json',
@@ -25,11 +23,17 @@ const addUser = async() => {
                 password: password,
                 username: username
             })
+    }).then(response => {
+        return response.text();
     });
 
-    document.getElementById('signup-form').reset();
+    alert(responseData);
+    /*
+         
+    */
 
-    this.alert(response.body);
+    document.getElementById('signup-form').reset();
+    
 };
 
 signup.addEventListener('click', addUser);
