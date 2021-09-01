@@ -8,7 +8,6 @@ body {
 header {
     height: 75px;
     background-color: rgb(44, 26, 0);
-    
 }
 header a{
     text-decoration: none;
@@ -39,7 +38,7 @@ header a{
 }
 .logo {
     padding-top: 10px;
-    margin-right: 50px;
+    padding-right: 50px;
 }
 .signup {
     float: left;

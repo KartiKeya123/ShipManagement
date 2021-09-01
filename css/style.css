@@ -24,9 +24,11 @@ header a{
 }
 .col-3 h1{
     font-family: sans-serif;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 400;
     color: rgb(0, 195, 255);
+    margin-top: 25px;
+    padding-left: 10px;
     text-align: left;
     text-shadow: white 2px 1px;
 }
@@ -43,6 +45,7 @@ header a{
 }
 .logo {
     padding-top: 10px;
+    padding-right: 50px;
 }
 .get-started-btn {
     background-color: #29aa3c;
@@ -58,6 +61,15 @@ header a{
 .get-started-btn:hover {
     background-color: #8ed899;
     color: green;
+}
+header h5 {
+    font-family: sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: white;
+    float: right;
+    margin-top: 30px;
+    padding: 1px 26px;
 }
 
 #top-section-content {
@@ -196,7 +208,7 @@ button:hover {
 footer {
     background-color: black;
     clear: both;
-    height: 725px;
+    height: 575px;
     background-image: url(../images/ship_footer_flipped.jpg) ;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -204,9 +216,9 @@ footer {
 .social-footer {
     width: 50%;
     float: left;
-    height: 15%;
-    margin-top: 365px;
-    padding-top: 75px;
+    height: 25%;
+    margin-top: 258px;
+    padding-top: 15px;
 
 }
 .social-footer:hover {
